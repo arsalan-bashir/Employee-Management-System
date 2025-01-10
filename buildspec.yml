@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Installing Maven"
+      - yum install -y maven
+
+  build:
+    commands:
+      - echo "Building the WAR file"
+      - mvn clean package
+      - mv target/*.war myapp.war
+
+  post_build:
+    commands:
+      - echo "Deployment complete"
