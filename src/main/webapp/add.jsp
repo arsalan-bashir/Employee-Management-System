@@ -12,7 +12,7 @@
 <body>
     <h1 class="heading">ADD EMPLOYEE</h1>
     <div class="add-container">
-        <form class="add-form-container" action="AddEmployee">
+        <form class="add-form-container" action="AddEmployee" method="post">
             <div class="form-group">
                 <label for="id">ID: </label>
                 <input type="text" name="id" id="id" value="kod" />
@@ -40,7 +40,7 @@
             <div class="buttons">
                 <a class="homelink" href="add.jsp">RESET</a>
                 <input class="homelink" type="submit" value="ADD" />
-                <a class="homelink" href="home.html">HOME</a>
+                <a class="homelink" href="home.jsp">HOME</a>
             </div>
         </form>
         <c:if test="${nora == '1'}">

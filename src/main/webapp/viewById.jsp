@@ -54,6 +54,6 @@
         <h3 class="res-heading">No Employee Found for the given ID</h3>
     </c:if>
     </div>
-    <a class="homelink" href="home.html">HOME</a>
+    <a class="homelink" href="home.jsp">HOME</a>
 </body>
 </html>

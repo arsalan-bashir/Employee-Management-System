@@ -46,7 +46,6 @@ public class DeleteById extends HttpServlet {
     		if(rs.next()) {
     			ps = con.prepareStatement(sql);
     			ps.setString(1, id);
-    			
     			nora = ps.executeUpdate();
     		}
     		

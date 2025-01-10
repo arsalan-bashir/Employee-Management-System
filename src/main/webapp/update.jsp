@@ -9,13 +9,12 @@
     <title>UPDATE EMPLOYEE</title>
 </head>
 <body>
-<body>
     <h1 class="heading">UPDATE EMPLOYEE DETAILS</h1>
     <div class="add-container">
-        <form class="add-form-container" action="UpdateEmployee">
+        <form class="add-form-container" action="UpdateEmployee" method="post">
             <div class="form-group">
                 <label for="id">ID: </label>
-                <input type="text" name="id" id="id" value="${employee.id}" disabled/>
+                <input type="text" name="id" id="id" value="${employee.id}" readonly/>
             </div>
             <div class="form-group">
                 <label for="name">Name: </label>
@@ -40,7 +39,7 @@
             <div class="buttons">
                 <a class="homelink" href="updateById.jsp">RESET</a>
                 <input class="homelink" type="submit" value="UPDATE" />
-                <a class="homelink" href="home.html">HOME</a>
+                <a class="homelink" href="home.jsp">HOME</a>
             </div>
         </form>
         <c:if test="${not empty id}">

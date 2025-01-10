@@ -57,10 +57,9 @@
 		<url-pattern>/UpdateEmployee</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
-		<welcome-file>home.html</welcome-file>
+		<welcome-file>home.jsp</welcome-file>
 		<welcome-file>style.css</welcome-file>
 		<welcome-file>viewEmployees.jsp</welcome-file>
 		<welcome-file>viewById.jsp</welcome-file>
-		<welcome-file>add.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>

@@ -76,7 +76,6 @@ public class ViewById extends HttpServlet {
 		}
 		else if(action.equals("update")) {
 			if(emp != null ) {
-				//req.setAttribute("nora", 0);
 				req.getRequestDispatcher("update.jsp").forward(req, res);
 			}
 			else {

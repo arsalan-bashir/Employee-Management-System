@@ -34,7 +34,7 @@
         </tbody>
     </table>
     
-    <a class="homelink" href="home.html">HOME</a>
+    <a class="homelink" href="home.jsp">HOME</a>
 </body>
 </html>
     
