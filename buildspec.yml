@@ -9,7 +9,7 @@ phases:
     commands:
       - echo "Compiling Java source files"
       - mkdir -p target/WEB-INF/classes  # Create output directory for compiled classes
-      - javac -d target/WEB-INF/classes src/java/**/*.java  # Compile Java files
+      - javac -d target/WEB-INF/classes src/main/java/*.java  # Compile Java files
       - echo "Packaging the application into WAR file"
       - mkdir -p target/WEB-INF  # Ensure WEB-INF directory exists
       - cp -r src/webapp/* target/  # Copy web resources (JSP, etc.) to target
