@@ -8,6 +8,7 @@
     <artifactId>employee-management-system</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
+    
 
     <dependencies>
         <!-- Servlet API -->
@@ -21,6 +22,7 @@
     </dependencies>
 
     <build>
+    	<finalName>myapp</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

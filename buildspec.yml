@@ -10,12 +10,12 @@ phases:
     commands:
       - echo "Building the WAR file"
       - mvn clean package
-      - echo "Listing contents of the target directory"
+      - echo "Checking for generated WAR file"
       - ls -la target
 
   post_build:
     commands:
-      - echo "Uploading the WAR file to S3"
+      - echo "Uploading WAR file to S3"
       - aws s3 cp target/myapp.war s3://codepipeline-ap-south-1-595684731156/myapp.war
 
 artifacts:
