@@ -4,9 +4,7 @@ phases:
   install:
     commands:
       - echo "Installing Maven"
-      - curl -s https://get.sdkman.io | bash
-      - source ~/.sdkman/bin/sdkman-init.sh
-      - sdk install maven
+      - yum install -y maven
 
   build:
     commands:
