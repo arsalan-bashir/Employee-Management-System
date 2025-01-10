@@ -2,16 +2,20 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      java: openjdk8
     commands:
-      - echo "Installing dependencies"
-      - mvn install
+      - echo "Installing Java 17"
+      - yum install -y java-17-openjdk # Ensure Java 17 is installed on the build machine
   build:
     commands:
-      - echo "Building WAR file"
-      - mvn package
+      - echo "Compiling Java source files"
+      - mkdir -p target/WEB-INF/classes  # Create output directory for compiled classes
+      - javac -d target/WEB-INF/classes src/main/java/**/*.java  # Compile Java files
+      - echo "Packaging the application into WAR file"
+      - mkdir -p target/WEB-INF  # Ensure WEB-INF directory exists
+      - cp -r src/main/webapp/* target/  # Copy web resources (JSP, etc.) to target
+      - cd target
+      - jar -cvf ../myapp.war *  # Create WAR file from compiled classes and web resources
 artifacts:
   files:
-    - target/*.war
+    - myapp.war  # The WAR file to deploy
   discard-paths: yes
