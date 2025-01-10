@@ -1,0 +1,4 @@
+version:
+os: linux
+files:
+  - source: /target/myapp.war

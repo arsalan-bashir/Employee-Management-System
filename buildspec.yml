@@ -1,22 +1,11 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo "Installing Maven"
-      - yum install -y maven
-
   build:
     commands:
       - echo "Building the WAR file"
       - mvn clean package
 
-  post_build:
-    commands:
-      - echo "Build complete"
-
 artifacts:
   files:
-    - target/myapp.war
-  discard-paths: yes
-  name: Fetch-EMS/BuildArtif
+    - '**/*'
