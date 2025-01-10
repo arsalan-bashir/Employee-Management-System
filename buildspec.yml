@@ -15,4 +15,8 @@ phases:
   post_build:
     commands:
       - echo "Deployment complete"
-      - aws s3 cp myapp.war s3://codepipeline-ap-south-1-595684731156/myapp.war
+      - aws s3 cp myapp.war s3://codepipeline-ap-south-1-595684731156/Fetch-EMS/BuildArtif/myapp.war
+
+artifacts:
+  files:
+    - BuildArtif/myapp.war
