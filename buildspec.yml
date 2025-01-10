@@ -10,14 +10,8 @@ phases:
     commands:
       - echo "Building the WAR file"
       - mvn clean package
-      - mv target/*.war myapp.war
-
-  post_build:
-    commands:
-      - echo "Deployment complete"
-      - aws s3 cp myapp.war s3://codepipeline-ap-south-1-595684731156/Fetch-EMS/BuildArtif/myapp.war
 
 artifacts:
   files:
-    - echo "Artifact Phase"
-    - myapp.war
+    - target/*.war
+  discard-paths: yes
