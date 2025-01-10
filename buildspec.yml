@@ -3,19 +3,17 @@ version: 0.2
 phases:
   install:
     commands:
-      - echo "Installing Java 17"
-      - yum install -y java-17-amazon-corretto-devel # Ensure Java 17 is installed on the build machine
+      - echo "Installing Maven"
+      - curl -s https://get.sdkman.io | bash
+      - source ~/.sdkman/bin/sdkman-init.sh
+      - sdk install maven
+
   build:
     commands:
-      - echo "Compiling Java source files"
-      - mkdir -p target/WEB-INF/classes  # Create output directory for compiled classes
-      - javac -d target/WEB-INF/classes src/main/java/*.java  # Compile Java files
-      - echo "Packaging the application into WAR file"
-      - mkdir -p target/WEB-INF  # Ensure WEB-INF directory exists
-      - cp -r src/webapp/* target/  # Copy web resources (JSP, etc.) to target
-      - cd target
-      - jar -cvf ../myapp.war *  # Create WAR file from compiled classes and web resources
-artifacts:
-  files:
-    - myapp.war  # The WAR file to deploy
-  discard-paths: yes
+      - echo "Building the WAR file"
+      - mvn clean package
+      - mv target/*.war myapp.war
+
+  post_build:
+    commands:
+      - echo "Deployment complete"
