@@ -4,7 +4,7 @@ phases:
   install:
     commands:
       - echo "Installing Java 17"
-      - yum install -y java-17-openjdk # Ensure Java 17 is installed on the build machine
+      - yum install -y java-17-amazon-corretto-devel # Ensure Java 17 is installed on the build machine
   build:
     commands:
       - echo "Compiling Java source files"
