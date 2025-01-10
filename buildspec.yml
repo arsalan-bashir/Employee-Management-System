@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk8
+    commands:
+      - echo "Installing dependencies"
+      - mvn install
+  build:
+    commands:
+      - echo "Building WAR file"
+      - mvn package
+artifacts:
+  files:
+    - target/*.war
+  discard-paths: yes
