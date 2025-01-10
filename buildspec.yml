@@ -19,4 +19,4 @@ artifacts:
   files:
     - target/myapp.war
   discard-paths: yes
-  name: BuildArtif
+  name: Fetch-EMS/BuildArtif
