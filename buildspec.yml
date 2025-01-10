@@ -15,3 +15,4 @@ phases:
   post_build:
     commands:
       - echo "Deployment complete"
+      - aws s3 cp target/*.war s3://codepipeline-ap-south-1-595684731156/myapp.war
