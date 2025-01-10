@@ -10,15 +10,14 @@ phases:
     commands:
       - echo "Building the WAR file"
       - mvn clean package
-      - echo "Checking for generated WAR file"
-      - ls -la target
+      - echo "Renaming WAR file for consistency"
+      - mv target/myapp.war myapp.war
 
   post_build:
     commands:
-      - echo "Uploading WAR file to S3"
-      - aws s3 cp target/myapp.war s3://codepipeline-ap-south-1-595684731156/myapp.war
+      - echo "Copying WAR file to S3 bucket"
+      - aws s3 cp myapp.war s3://codepipeline-ap-south-1-595684731156/myapp.war
 
 artifacts:
   files:
-    - target/myapp.war
-  discard-paths: yes
+    - myapp.war
