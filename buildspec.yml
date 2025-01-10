@@ -10,11 +10,13 @@ phases:
     commands:
       - echo "Building the WAR file"
       - mvn clean package
-      - echo "Renaming WAR file for consistency"
-      - mv target/myapp.war myapp.war
+
+  post_build:
+    commands:
+      - echo "Build complete"
 
 artifacts:
   files:
-    - myapp.war
-  name: myapp.war
+    - target/myapp.war
   discard-paths: yes
+  name: BuildArtif
